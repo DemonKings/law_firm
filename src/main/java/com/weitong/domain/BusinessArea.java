@@ -16,9 +16,9 @@ public class BusinessArea {
 	@Id
 	@Column(name="C_ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Integer id;				//主键
 	@Column(name="C_NAME")
-	private String name;
+	private String name;			//业务名
 	
 	
 	public Integer getId() {

@@ -31,13 +31,13 @@
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner" role="listbox">
 				    <div class="item active">
-				      <img src="img/base/lunbo1.jpg" alt="..." width="100%">
+				      <img src="${pageContext.request.contextPath }/img/base/lunbo1.jpg" alt="..." width="100%">
 				    </div>
 				    <div class="item">
-				      <img src="img/base/lunbo2.jpg" alt="..." width="100%">
+				      <img src="${pageContext.request.contextPath }/img/base/lunbo2.jpg" alt="..." width="100%">
 				    </div>
 				    <div class="item">
-				      <img src="img/base/lunbo3.jpg" alt="..." width="100%">
+				      <img src="${pageContext.request.contextPath }/img/base/lunbo3.jpg" alt="..." width="100%">
 				    </div>
 				  </div>
 				  <!-- 左右控制 -->
@@ -96,7 +96,7 @@
 		<div class="container-fluid" >
 		  <div class="row">
 		  	<!--圆角响应式图片-->
-		    <img src="img/base/1.bmp" class="img-rounded img-responsive" width="100%">
+		    <img src="${pageContext.request.contextPath }/img/base/1.bmp" class="img-rounded img-responsive" width="100%">
 		  </div>
 		</div>
 		<br/>

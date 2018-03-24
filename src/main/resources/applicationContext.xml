@@ -62,4 +62,7 @@
 	<!-- spring-data整合jpa -->
 	<jpa:repositories base-package="com.weitong.dao" />
 	
+	<!-- 导入其他配置 -->
+	<import resource="classpath:applicationContext-activeMQ.xml"/>
+	<import resource="classpath:applicationContext-redis.xml"/>
 </beans>

@@ -20,18 +20,18 @@
 					</div>
 					<div class="signup">
 						<div class="col-md-9 signupbox">
-							<form action="CustomerAction_regist.action" method="post" class="bl-form bl-formhor" id="jsForm">
+							<form action="${pageContext.request.contextPath }/UserAction_regist.action" method="post" class="bl-form bl-formhor" id="jsForm">
 								<ul>
 									<li class="bl-form-group">
 										<label><em>*</em>手机号：</label>
 										<div class="controls">
-											<input type="text" id="telephone" value="" name="telephone" class="fn-tinput" placeholder="手机号" required data-rule-mobile="true" data-msg-required="请输入手机号" data-msg-mobile="请输入正确格式" data-rule-remote="UserAction_validateTel.action" data-msg-remote="手机号已被注册!"/>
+											<input type="text" id="telephone" value="" name="telephone" class="fn-tinput" placeholder="手机号" required data-rule-mobile="true" data-msg-required="请输入手机号" data-msg-mobile="请输入正确格式" data-rule-remote="${pageContext.request.contextPath }/UserAction_validateTel.action" data-msg-remote="手机号已被注册!"/>
 										</div>
 									</li>
 									<li class="bl-form-group">
 										<label><em>*</em>验证码：</label>
 										<div class="controls">
-											<input type="text" value="" name="checkcode" class="fn-tinput" placeholder="请输入验证码" required />
+											<input type="text" value="" name="checkcode" class="fn-tinput" placeholder="请输入验证码" required data-rule-remote="${pageContext.request.contextPath }/UserAction_validateCheckcode.action" data-msg-remote="验证码错误!"/>
 											<input type="button"  onclick="sendCode(this)" class="btn btn-default" value="获取验证码">
 											<script type="text/javascript">
 												var clock = '';
@@ -43,10 +43,11 @@
 													var reg = /^1[3|4|5|7|8][0-9]{9}$/;
 													var r = reg.test(tel);
 													if(!r){
+														alert("请输入正确的手机号!");
 														return;
 													}
 													//发送Ajax请求给用户发送验证码
-													$.post("CustomerAction_sendCheckCode",{"telephone":tel},function(data){
+													$.post("${pageContext.request.contextPath }/CustomerAction_sendCheckcode.action",{"telephone":tel},function(data){
 														if(data==1){
 															alert("验证码发送成功,请注意查收!")
 														}else{
